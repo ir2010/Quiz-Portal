@@ -5,68 +5,13 @@
 <title> Admin Portal </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+<link rel="stylesheet" href="data_styles.css">
 
-body 
-{
-  overflow-x: hidden;
-  background-image: url("bg.jpg");
-  background-position: center;
-  /*width:100%;*/
-  background-size: cover;
-  position: relative;
-  /*background-repeat: no-repeat;*/
-  /*height: 100%;*/
-}
-
-
-input[type=text],input[type=file],input[type=number],select{
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit],.btn {
-  background-color: #0484f1;
-  color: white;
-  width: 6em;
-  height: 3em;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  position: relative;
-  left: 45%;
-  cursor: pointer;
-}
-
-input[type=submit]:hover,.btn:hover {
-    background-color: grey;
-		       border-color: grey;
-}
-
-#formbox {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  /*position: absolute;
-  top:5%;
-  -ms-transform: translateY(+50%);
-  transform: translateY(+50%);*/
-  margin-left: auto;
-  margin-top: auto;
-}
-
-</style>
 </head>
 
 <body onload="populate_form()">
 
-
+<script type="text/javascript" src="data_js.js"></script>
 
 <div id="formbox">
     <form action="ques_database.php" method="POST" enctype="multipart/form-data">
@@ -111,53 +56,7 @@ input[type=submit]:hover,.btn:hover {
 
 </body>
 
-<script>
-    var i;
-    var no_of_mcq = "<?php echo $_GET['mcq'] ?>";
 
-function populate_form()
-{
-    for(i=1;i<=no_of_mcq;i++)
-    {      
-      document.getElementById("qno").innerHTML = "Question "+i;
-      //create_form();
-
-    }
-}
-
-function create_form()
-{
-        form= document.getElementById("formbox");
-        form.style.display="block";
-}
-
-function update_i()
-{
-    i++;
-}
-
-/*function validate()
-{
-var ques = document.getElementById("ques");
-
-var constraint_ques = new RegExp("(?)");
-    console.log(constraint_ques);
-
-if (constraint_ques.test(ques.value)) {
-    ques.setCustomValidity("");
-  }
-  else {
-    ques.setCustomValidity("Must be a valid question!");
-  }
-}
-
-window.onload = function () {
-    document.getElementById("ques").oninput = validate;
-
-}*/
-
-
-</script>
 
 
 </html>
